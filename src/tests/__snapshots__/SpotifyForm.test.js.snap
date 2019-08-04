@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpotifyForm Component matches the snapshot 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col"
+  />
+  <div
+    className="search col-lg-6 col-md-8 col-sm-10"
+  >
+    <form
+      className=""
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="auth-input form-label"
+        >
+          Enter your auth token
+        </label>
+        <input
+          className="auth-input form-control"
+          name="auth"
+          onChange={[Function]}
+          placeholder="Auth Token"
+          type="text"
+        />
+        <small
+          className="form-text"
+        >
+          This can be found at spotify.api.com
+        </small>
+      </div>
+      <div
+        className="form-group"
+      >
+        <div
+          className="mt-3 toggle-search btn-group btn-group-toggle"
+          role="group"
+        >
+          <label
+            className="btn active btn-success"
+            disabled={false}
+            id="top-tracks"
+            type={null}
+          >
+            <input
+              autoComplete="off"
+              checked={true}
+              disabled={false}
+              name="searchType"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="radio"
+              value="top-tracks"
+            />
+            Top Tracks
+          </label>
+          <label
+            className="btn btn-success"
+            disabled={false}
+            id="top-artists"
+            type={null}
+          >
+            <input
+              autoComplete="off"
+              checked={false}
+              disabled={false}
+              name="searchType"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="radio"
+              value="top-artists"
+            />
+            Top Artists
+          </label>
+          <label
+            className="btn btn-success"
+            disabled={false}
+            id="recent-tracks"
+            type={null}
+          >
+            <input
+              autoComplete="off"
+              checked={false}
+              disabled={false}
+              name="searchType"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="radio"
+              value="recent-tracks"
+            />
+            Recent Tracks
+          </label>
+        </div>
+      </div>
+      <div
+        className="form-row"
+      >
+        <div
+          className="form-group col"
+        >
+          <label
+            className="form-label"
+          >
+            Time Range
+          </label>
+          <select
+            className="time-range form-control"
+            id="time-range"
+            name="timeRange"
+            onChange={[Function]}
+          >
+            <option
+              id="none"
+              value={false}
+            >
+              none
+            </option>
+            <option
+              id="short_term"
+              value="short_term"
+            >
+              short term
+            </option>
+            <option
+              id="medium_term"
+              value="medium_term"
+            >
+              medium term
+            </option>
+            <option
+              id="long_term"
+              value="long_term"
+            >
+              long term
+            </option>
+          </select>
+        </div>
+        <div
+          className="form-group col"
+        >
+          <label
+            className="form-label"
+          >
+            Offset
+          </label>
+          <select
+            className="form-control"
+            id="offset"
+            name="offset"
+            onChange={[Function]}
+          >
+            <option
+              value={false}
+            >
+              none
+            </option>
+            <option>
+              10
+            </option>
+            <option>
+              20
+            </option>
+            <option>
+              30
+            </option>
+            <option>
+              40
+            </option>
+            <option>
+              50
+            </option>
+          </select>
+        </div>
+        <div
+          className="form-group col"
+        >
+          <label
+            className="form-label"
+          >
+            Limit
+          </label>
+          <select
+            className="form-control"
+            id="limit"
+            name="limit"
+            onChange={[Function]}
+          >
+            <option
+              value={false}
+            >
+              none
+            </option>
+            <option>
+              10
+            </option>
+            <option>
+              20
+            </option>
+            <option>
+              30
+            </option>
+            <option>
+              40
+            </option>
+            <option>
+              50
+            </option>
+          </select>
+        </div>
+      </div>
+      <button
+        className="submit btn btn-success"
+        disabled={false}
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+  <div
+    className="col"
+  />
+</div>
+`;

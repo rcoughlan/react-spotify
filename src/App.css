@@ -31,3 +31,25 @@
     transform: rotate(360deg);
   }
 }
+
+.toggle-search {
+  margin-bottom: 0.5rem;
+}
+
+.submit{
+  margin-top: 1rem;
+}
+
+body{
+  background-color: #4a4a4a !important;
+}
+
+.wrapper{ 
+  margin-top: 200px;
+}
+
+.search{
+  background-color: #e0e0e0;
+  border-radius: 17px;
+  padding: 30px;
+}

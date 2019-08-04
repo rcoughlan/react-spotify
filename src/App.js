@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Container } from 'react-bootstrap';
+import SpotifyForm from './components/SpotifyForm';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const api = require('./funcs/Api');
+
+class App extends Component {
+
+  state = {
+    auth: '',
+    searchType: 'top-tracks',
+    timeRange: false,
+    offset: false,
+    limit: false
+  };
+  
+  handleUpdateFields = (obj) => {
+    this.setState(obj);
+  }
+
+  hitApi = () => {
+    api.hitSpotify(this.state.auth, this.state.searchType, this.state.timeRange, this.state.offset, this.state.limit)
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Container className="wrapper">
+
+          <SpotifyForm updateFields={this.handleUpdateFields} hitApi={this.hitApi} />
+
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default App;
