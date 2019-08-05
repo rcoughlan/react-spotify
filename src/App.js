@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import SpotifyForm from './components/SpotifyForm';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './styles/App.css';
 
 const api = require('./funcs/Api');
 
@@ -30,7 +30,7 @@ class App extends Component {
       <div className="App">
         <Container className="wrapper">
 
-          <SpotifyForm updateFields={this.handleUpdateFields} hitApi={this.hitApi} />
+          <SpotifyForm updateFields={this.handleUpdateFields} hitApi={this.hitApi} searchType={this.state.searchType}/>
 
         </Container>
       </div>

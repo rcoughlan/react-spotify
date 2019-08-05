@@ -20,7 +20,7 @@ describe('SpotifyForm Component', () => {
         const toggleGroup = wrapper.find('.toggle-search');
         expect(toggleGroup.children()).toHaveLength(3);
     });
-
+ 
     it('submit button calls hitApi()', () => {
         const handleUpdateFields = jest.fn(x => state.push(x));
         const wrapper = mount(<SpotifyForm updateFields={handleUpdateFields} hitApi={hitApi} />);
