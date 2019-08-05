@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import SpotifyForm from '../components/SpotifyForm'
@@ -77,5 +77,4 @@ describe('SpotifyForm Component', () => {
         offset.simulate('change', { value: 10 });
         expect(handleUpdateFields).toBeCalledTimes(1);
     });
-
 })
