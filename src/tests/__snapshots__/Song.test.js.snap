@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Song Component matches the snapshot 1`] = `
+<div
+  className="col"
+>
+  <a
+    className="spotify-link"
+    href="https://open.spotify.com/album/5ceB3rxgXqIRpsOvVzTG28"
+    target="_blank"
+  >
+    <div
+      className="song-card card"
+    >
+      <img
+        alt="Aquemini album art"
+        className="card-img-top thumbnail"
+        src="https://i.scdn.co/image/931c3a43c71a4f2b86653d78050af585029e5623"
+      />
+      <div
+        className="card-body"
+      >
+        <div
+          alt="track title: undefined"
+          className="track-title card-title h5"
+        />
+        <p
+          alt="artist: Outkast"
+          className="track-artist card-text"
+        >
+          Outkast
+        </p>
+        <p
+          alt="album title: Aquemini"
+          className="album-title card-text"
+        >
+          Aquemini
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+`;

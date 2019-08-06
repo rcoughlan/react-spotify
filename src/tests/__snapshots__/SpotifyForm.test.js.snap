@@ -2,7 +2,7 @@
 
 exports[`SpotifyForm Component matches the snapshot 1`] = `
 <div
-  className="row"
+  className="search-form row"
 >
   <div
     className="col"

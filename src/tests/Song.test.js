@@ -7,50 +7,55 @@ describe('Song Component', () => {
 
     let songsObject = {
         artist: 'Outkast',
-        song: 'SpottieOttieDopaliscious',
+        name: 'SpottieOttieDopaliscious',
         album: 'Aquemini',
-        albumArt: 'https://i.scdn.co/image/931c3a43c71a4f2b86653d78050af585029e5623',
-        url: 'https://open.spotify.com/album/5ceB3rxgXqIRpsOvVzTG28'
+        image: 'https://i.scdn.co/image/931c3a43c71a4f2b86653d78050af585029e5623',
+        link: 'https://open.spotify.com/album/5ceB3rxgXqIRpsOvVzTG28'
 
     }
 
     it('matches the snapshot', () => {
-        const tree = renderer.create(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>).toJSON();
+        const tree = renderer.create(<Song artist={songsObject.artist} link={songsObject.link} album={songsObject.album} image={songsObject.image} link={songsObject.link} />).toJSON();
 
         expect(tree).toMatchSnapshot();
     });
 
     it('should render a component with a thumbnail image with correct alt tag', () => {
-        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
-        const thumbnail = wrapper.find('img.thumbnail');
+        const wrapper = shallow(<Song artist={songsObject.artist} link={songsObject.link} album={songsObject.album} image={songsObject.image} link={songsObject.link} />);
+        const thumbnail = wrapper.find('.thumbnail');
+        expect(thumbnail).toHaveLength(1);
 
         expect(thumbnail.prop('alt')).toBe(songsObject.album + ' album art');
-        expect(thumbnail.prop('src')).toBe(songsObject.albumArt);
+        expect(thumbnail.prop('src')).toBe(songsObject.image);
     });
-    
-    it('thumbnail image should link to the song on spotify', () => {
-        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
-        const thumbnail = wrapper.find('img.thumbnail');
 
-        expect(thumbnail.prop('href')).toBe(songsObject.url);
-        expect(thumbnail.prop('target')).toBe('_blank');
+    it('card should link to the song on spotify', () => {
+        const wrapper = shallow(<Song artist={songsObject.artist} link={songsObject.link} album={songsObject.album} image={songsObject.image} link={songsObject.link} />);
+        const card = wrapper.find('.spotify-link');
+        expect(card).toHaveLength(1);
+
+        expect(card.prop('href')).toBe(songsObject.link);
+        expect(card.prop('target')).toBe('_blank');
     });
-    
+
     it('should have a song title', () => {
-        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
-        const title = wrapper.find('p.track-title');
+        const wrapper = shallow(<Song artist={songsObject.artist} link={songsObject.link} album={songsObject.album} image={songsObject.image} link={songsObject.link} />);
+        const title = wrapper.find('.track-title');
+        expect(title).toHaveLength(1)
         expect(title.prop('alt')).toBe('track title: ' + songsObject.song);
     });
-    
+
     it('should have an artist title', () => {
-        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
-        const artist = wrapper.find('p.track-artist');
+        const wrapper = shallow(<Song artist={songsObject.artist} link={songsObject.link} album={songsObject.album} image={songsObject.image} link={songsObject.link} />);
+        const artist = wrapper.find('.track-artist');
+        expect(artist).toHaveLength(1)
         expect(artist.prop('alt')).toBe('artist: ' + songsObject.artist);
     });
-    
+
     it('should have an album title', () => {
-        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
-        const album = wrapper.find('p.album-title');
+        const wrapper = shallow(<Song artist={songsObject.artist} link={songsObject.link} album={songsObject.album} image={songsObject.image} link={songsObject.link} />);
+        const album = wrapper.find('.album-title');
+        expect(album).toHaveLength(1)
         expect(album.prop('alt')).toBe('album title: ' + songsObject.album);
     });
 });

@@ -28,7 +28,7 @@ class SpotifyForm extends Component {
     render() {
         return (
 
-            <Row>
+            <Row className="search-form">
                 <Col></Col>
                 <Col sm="10" md="8" lg="6" className="search">
 
