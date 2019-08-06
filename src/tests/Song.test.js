@@ -1,49 +1,56 @@
-import Album from '../components/Album';
+import Song from '../components/Song';
 import React from 'react';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-describe('Artist Component', () => {
+describe('Song Component', () => {
 
-    let artistObject = {
-        artist: 'Arctic Monkeys',
-        genres: ['rock', 'indie', 'sheffield indie'],
-        artistImage: 'https://i.scdn.co/image/ed0552e9746ed2bbf04ae4bcb5525700ca31522d',
-        url: 'https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH'
+    let songsObject = {
+        artist: 'Outkast',
+        song: 'SpottieOttieDopaliscious',
+        album: 'Aquemini',
+        albumArt: 'https://i.scdn.co/image/931c3a43c71a4f2b86653d78050af585029e5623',
+        url: 'https://open.spotify.com/album/5ceB3rxgXqIRpsOvVzTG28'
 
     }
 
     it('matches the snapshot', () => {
-        const tree = renderer.create(<Artist artist={artistObject.artist} genres={artistObject.genres} artistImage={artistObject.artistImage} url={artistObject.url}/>).toJSON();
+        const tree = renderer.create(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>).toJSON();
 
         expect(tree).toMatchSnapshot();
     });
 
     it('should render a component with a thumbnail image with correct alt tag', () => {
-        const wrapper = shallow(<Songs artist={artistObject.artist} genres={artistObject.genres} artistImage={artistObject.artistImage} url={artistObject.url}/>);
+        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
         const thumbnail = wrapper.find('img.thumbnail');
 
-        expect(thumbnail.prop('alt')).toBe(artistObject.artist + ' artist image');
-        expect(thumbnail.prop('src')).toBe(artistObject.artistImage);
+        expect(thumbnail.prop('alt')).toBe(songsObject.album + ' album art');
+        expect(thumbnail.prop('src')).toBe(songsObject.albumArt);
     });
     
-    it('thumbnail image should link to the artist on spotify', () => {
-        const wrapper = shallow(<Songs artist={artistObject.artist} genres={artistObject.genres} artistImage={artistObject.artistImage} url={artistObject.url}/>);
+    it('thumbnail image should link to the song on spotify', () => {
+        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
         const thumbnail = wrapper.find('img.thumbnail');
 
-        expect(thumbnail.prop('href')).toBe(artistObject.url);
+        expect(thumbnail.prop('href')).toBe(songsObject.url);
         expect(thumbnail.prop('target')).toBe('_blank');
     });
     
-    it('should have an artist title', () => {
-        const wrapper = shallow(<Songs artist={artistObject.artist} genres={artistObject.genres} artistImage={artistObject.artistImage} url={artistObject.url}/>);
-        const artist = wrapper.find('p.artist');
-        expect(artist.prop('alt')).toBe('artist: ' + artistObject.artist);
+    it('should have a song title', () => {
+        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
+        const title = wrapper.find('p.track-title');
+        expect(title.prop('alt')).toBe('track title: ' + songsObject.song);
     });
     
-    it('should have an list of genres', () => {
-        const wrapper = shallow(<Songs artist={artistObject.artist} genres={artistObject.genres} artistImage={artistObject.artistImage} url={artistObject.url}/>);
-        const album = wrapper.find('p.genres');
-        expect(album.prop('alt')).toBe('genres: ' + artistObject.genres);
+    it('should have an artist title', () => {
+        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
+        const artist = wrapper.find('p.track-artist');
+        expect(artist.prop('alt')).toBe('artist: ' + songsObject.artist);
+    });
+    
+    it('should have an album title', () => {
+        const wrapper = shallow(<Song artist={songsObject.artist} song={songsObject.song} album={songsObject.album} albumArt={songsObject.albumArt} url={songsObject.url}/>);
+        const album = wrapper.find('p.album-title');
+        expect(album.prop('alt')).toBe('album title: ' + songsObject.album);
     });
 });
