@@ -57,7 +57,7 @@ body{
 .search-form{
   margin-bottom: 5px;
 }
-.song-card {
+.music-card {
   margin: 10px 5px;
   width: 100%;
 }
@@ -71,16 +71,16 @@ a:hover{
   text-decoration: none;
 }
 
-.song-card{
+.music-card{
   background-color: #e0e0e0;
 }
 
-.song-card:hover{
+.music-card:hover{
   background-color: #a5a5a5;
 }
 
 @media only screen and (min-width: 490px) {
-  .song-card {
+  .music-card {
     width: 200px;
   }
 }

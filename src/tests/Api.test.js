@@ -3,7 +3,7 @@ const api = require('../funcs/Api');
 
 describe('api', () => {
 
-    let auth = 'BQBaTvgUpn-83viBBxyfo2xhk27CkAgBVlFh5ZUGNv9RWZcatzrsqWJwR39apxJ1wATvY-_IVgcPD_iGb5289YxmQFcAnI_OFpSU8fCoWSYetLoUtQXgEyIiEXLZincI6w20SOBWgQtyAIdMb0cyZ8p5S1lP1jLn0pcMlF_xkz_-z49miSB-evfxNfK9JDjg24YCZjwiIJ_uSbvfaSJPTlVgbIKvs4rHqWQ9KiMI2iY4L5mrCDK3BqXSlwwaC8Ty7yI3n_eeigFRc4zrvmnecWICJql2DyW3';
+    let auth = 'BQDXtWNzl9rnyNDsacg9gdw_8Ge3es6S5ZfTpkWJqnjxpu3KBp5u3V3cvDKVPWMfQGOyt8g00QfSkb8lphXBHCiGpAk-4EhfJcQ8QHfFziYRsCMNUguSiD4vAiMIksKwh4OU-y8FhyuXsPR3QhqVDSSJLM15KlCMAqOJ8OjiXnZ82xTgPtJWMR2BU8QEDInieIbLTuX-SzWzwxMBDsmKkCUarTdK8S31vAAwAwvIwv3pGrKob9Ym8sTUI6uN20HQNl0fOxNNF42orHIbUQF06AvsdagfAgzi';
     let short = 'short_term';
     let med = 'medium_term';
     let topTracks = 'top-tracks';

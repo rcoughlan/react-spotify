@@ -12,8 +12,6 @@ async function hitSpotify(auth, searchType, timeRange, offset, limit) {
     // .then(data => console.log(data))
     // .catch(err => console.log(err))
     const artists = await spotResponse.json();
-    console.log(artists.items[0]);
-    console.log(path);
     return artists;
 }
 

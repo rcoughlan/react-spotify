@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artist Component matches the snapshot 1`] = `
+<div
+  className="col"
+>
+  <a
+    className="spotify-link"
+    href="https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"
+    target="_blank"
+  >
+    <div
+      className="music-card card"
+    >
+      <img
+        alt="Arctic Monkeys artist image"
+        className="card-img-top thumbnail"
+        src="https://i.scdn.co/image/ed0552e9746ed2bbf04ae4bcb5525700ca31522d"
+      />
+      <div
+        className="card-body"
+      >
+        <div
+          alt="artist: Arctic Monkeys"
+          className="artist-name card-title h5"
+        >
+          Arctic Monkeys
+        </div>
+        <p
+          alt="genre rock"
+          className="genres card-text"
+        >
+          rock
+        </p>
+        <p
+          alt="genre indie"
+          className="genres card-text"
+        >
+          indie
+        </p>
+        <p
+          alt="genre sheffield indie"
+          className="genres card-text"
+        >
+          sheffield indie
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+`;
