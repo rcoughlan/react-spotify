@@ -34,12 +34,6 @@ class SpotifyForm extends Component {
 
                     <Form onSubmit={this.onSubmit}>
 
-                        <Form.Group>
-                            <Form.Label className="auth-input">Enter your auth token</Form.Label>
-                            <Form.Control className="auth-input" type="text" placeholder="Auth Token" name="auth" onChange={this.handleChange} />
-                            <Form.Text>This can be found at spotify.api.com</Form.Text>
-                        </Form.Group>
-
                         <Form.Group >
                             <ToggleButtonGroup name="searchType" defaultValue="top-tracks" className="mt-3 toggle-search">
                                 <ToggleButton id="top-tracks" variant="success" type="radio" value="top-tracks" onChange={this.handleChange}>Top Tracks</ToggleButton>

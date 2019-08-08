@@ -17,27 +17,6 @@ exports[`SpotifyForm Component matches the snapshot 1`] = `
       <div
         className="form-group"
       >
-        <label
-          className="auth-input form-label"
-        >
-          Enter your auth token
-        </label>
-        <input
-          className="auth-input form-control"
-          name="auth"
-          onChange={[Function]}
-          placeholder="Auth Token"
-          type="text"
-        />
-        <small
-          className="form-text"
-        >
-          This can be found at spotify.api.com
-        </small>
-      </div>
-      <div
-        className="form-group"
-      >
         <div
           className="mt-3 toggle-search btn-group btn-group-toggle"
           role="group"

@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Backend Dependency
+
+This project is dependent on an express backend. It is compatible with 
+https://github.com/mpj/oauth-bridge-template
+
 ## Available Scripts
 
 In the project directory, you can run:

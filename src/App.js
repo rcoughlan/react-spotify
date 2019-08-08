@@ -3,6 +3,8 @@ import { Container, Row } from 'react-bootstrap';
 import SpotifyForm from './components/SpotifyForm';
 import Song from './components/Song';
 import Artist from './components/Artist';
+import Login from './components/Login';
+import queryString from 'query-string'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
@@ -12,7 +14,6 @@ const api = require('./funcs/Api');
 class App extends Component {
 
   state = {
-    auth: '',
     searchType: 'top-tracks',
     timeRange: false,
     offset: false,
@@ -32,6 +33,14 @@ class App extends Component {
         });
       })
     // console.log(results);
+  }
+
+  componentDidMount(){
+    let parsed = queryString.parse(window.location.search);
+    let authObject = {
+      auth: parsed.access_token
+    }
+    this.setState(authObject);
   }
 
   render() {
@@ -79,12 +88,18 @@ class App extends Component {
       }
     }
 
+    let display = <Login />;
+    if(this.state.auth){
+      display = <SpotifyForm updateFields={this.handleUpdateFields} hitApi={this.hitApi} searchType={this.state.searchType} />;
+    } 
+
     return (
       <div className="App">
 
         <Container className="wrapper">
 
-          <SpotifyForm updateFields={this.handleUpdateFields} hitApi={this.hitApi} searchType={this.state.searchType} />
+          {display}
+          
           <Row>
             {cardsList}
           </Row>

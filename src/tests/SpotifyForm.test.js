@@ -28,17 +28,6 @@ describe('SpotifyForm Component', () => {
         form.simulate('submit');
         expect(hitApi).toHaveBeenCalledTimes(1);
     });
-
-    it('renders text input with label "Enter Your Auth Token"', () => {
-        const handleUpdateFields = jest.fn(x => state.push(x));
-        const wrapper = mount(<SpotifyForm updateFields={handleUpdateFields} hitApi={hitApi} />);
-        const authLabel = wrapper.find('label.auth-input');
-        const authInput = wrapper.find('input.auth-input');
-        expect(authLabel).toHaveLength(1);
-        expect(authLabel.text()).toEqual('Enter your auth token');
-        expect(authInput.prop('type')).toEqual('text');
-        expect(authInput.prop('name')).toEqual('auth');
-    });
     
     it('has toggle buttons for search types with one default active', () => {
         const handleUpdateFields = jest.fn(x => state.push(x));
