@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Backend Dependency
 
 This project is dependent on an express backend. It is compatible with 
-https://github.com/mpj/oauth-bridge-template
+https://github.com/rcoughlan/spotify-router
 
 ## Available Scripts
 

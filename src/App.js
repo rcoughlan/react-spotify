@@ -32,7 +32,6 @@ class App extends Component {
           typeSearched: this.state.searchType
         });
       })
-    // console.log(results);
   }
 
   componentDidMount(){
@@ -99,7 +98,7 @@ class App extends Component {
         <Container className="wrapper">
 
           {display}
-          
+
           <Row>
             {cardsList}
           </Row>
