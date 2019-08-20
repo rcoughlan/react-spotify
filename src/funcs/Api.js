@@ -40,4 +40,4 @@ const getPath = (searchType, timeRange, offset, limit) => {
     }
 }
 
-module.exports = { hitSpotify, getPath }
+export default { hitSpotify, getPath }
