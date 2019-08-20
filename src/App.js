@@ -9,7 +9,7 @@ import queryString from 'query-string'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 
-const api = require('./funcs/Api');
+import { hitSpotify} from './funcs/Api';
 
 class App extends Component {
 
@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   hitApi = () => {
-    api.hitSpotify(this.state.auth, this.state.searchType, this.state.timeRange, this.state.offset, this.state.limit)
+    hitSpotify(this.state.auth, this.state.searchType, this.state.timeRange, this.state.offset, this.state.limit)
       .then(result => {
         this.setState({
           results: result.items,
